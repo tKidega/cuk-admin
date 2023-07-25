@@ -1,0 +1,9 @@
+.navbar{
+    display: flex;
+    justify-content:space-around;
+    gap: 50px;
+}.nav{
+    display: block;
+}.logout{
+    flex: 1;
+}

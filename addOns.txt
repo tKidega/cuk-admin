@@ -1,0 +1,28 @@
+-----Installing project dependencies----
+next version 13.4.10
+npx create-next-app@latest PROJECT_NAME_HERE
+npx shadcn-ui@latest init npm 
+npm i @clerk/nextjs
+npm i -D @tailwindcss/typography
+npm run dev
+npx shadcn-ui@latest add dialog
+npm install zustand
+npx shadcn-ui@latest add form
+npx shadcn-ui@latest add input
+
+----Login Credentials----
+userName admin
+passkey timB***@4##
+
+----Add a reusable component to your project----
+npx shadcn-ui@latest add button
+
+----Clerk env keys----
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Z29vZC1jcmFuZS0xOS5jbGVyay5hY2NvdW50cy5kZXYk
+CLERK_SECRET_KEY=sk_test_6HKFPIQz1p53g78RIwVaLgArn4fgq4GLqBvrILUhhF
+
+----Clerk publishable keys----
+pk_test_Z29vZC1jcmFuZS0xOS5jbGVyay5hY2NvdW50cy5kZXYk
+
+----Clerk secret keys----
+sk_test_6HKFPIQz1p53g78RIwVaLgArn4fgq4GLqBvrILUhhF
