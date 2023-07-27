@@ -16,6 +16,9 @@ npx prisma generate
 npx prisma db push
 npm i axios
 npm i react-hot-toast
+npx shadcn-ui@latest add popover
+npx shadcn-ui@latest add command
+
 
 ----How to reset prisma database----
 npx prisma migrate reset
