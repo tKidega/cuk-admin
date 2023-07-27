@@ -9,6 +9,13 @@ npx shadcn-ui@latest add dialog
 npm install zustand
 npx shadcn-ui@latest add form
 npx shadcn-ui@latest add input
+npm i -D prisma
+npm i @prisma/client
+npx prisma init
+npx prisma generate
+npx prisma db push
+npm i axios
+npm i react-hot-toast
 
 ----Login Credentials----
 userName admin
