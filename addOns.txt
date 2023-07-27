@@ -17,6 +17,9 @@ npx prisma db push
 npm i axios
 npm i react-hot-toast
 
+----How to reset prisma database----
+npx prisma migrate reset
+
 ----Login Credentials----
 userName admin
 passkey timB***@4##
