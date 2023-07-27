@@ -18,6 +18,7 @@ npm i axios
 npm i react-hot-toast
 npx shadcn-ui@latest add popover
 npx shadcn-ui@latest add command
+npx shadcn-ui@latest add separator
 
 
 ----How to reset prisma database----

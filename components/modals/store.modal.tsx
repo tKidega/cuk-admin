@@ -46,8 +46,7 @@ export const StoreModal = () => {
     return(
         <Modal
             title="Create Store"
-            description="Use this form to add a new store to the existing collection.
-                Manage all your products and their respective categories."
+            description="Use this form to create a new store."
             isOpen={StoreModal.isOpen}
             onClose={StoreModal.onClose}>
             <div>
