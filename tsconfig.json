@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/store-switcher.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/store-switcher.tsx", "app/(dashboard)/[storeId]/(routes)/settings/page.jsx"],
   "exclude": ["node_modules"]
 }

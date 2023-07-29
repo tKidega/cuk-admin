@@ -1,9 +1,9 @@
-"use client";
+ "use client";
 
 import axios from "axios";
 import { useState } from "react";
 import * as z from "zod";
-import { Store } from "@prisma/client";
+import { Billboard } from "@prisma/client";
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
 import { Trash } from "lucide-react";
@@ -25,33 +25,41 @@ import AlertModal from "@/components/modals/alert-modal";
 import { ApiAlert } from "@/components/ui/api-alert";
 import { useOrigin } from "@/hooks/use-origin";
 
+const formSchema =z.object({
+    label: z.string().min(3),
+    imageUrl: z.string().min(1)
+});
 
-interface SettingsFormProps{
-    initialData: Store;
+type BillboardFormValues = z.infer<typeof formSchema>;
+
+interface BillboardFormProps{
+    initialData: Billboard | null;
 }
 
-const formSchema =z.object({
-    name: z.string().min(3),
-})
-
-type SettingsFormValues = z.infer<typeof formSchema>;
-
-const SettingsForm: React.FC<SettingsFormProps> = ({
+export const BillboardForm: React.FC<BillboardFormProps> = ({
     initialData
 }) => {
-
-    const params =  useParams();
+    const origin = useOrigin();
+    const params = useParams();
     const router = useRouter();
+
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
-    const origin = useOrigin();
+    
+    const title = initialData ? "Edit billboard" : "Create billboard";
+    const description = initialData ? "Edit a billboard" : "Add new billboard";
+    const toastMessage = initialData ? "Billboard updated." : "Billboard created.";
+    const action = initialData ? "Save changes" : "Create";
 
-    const form = useForm<SettingsFormValues>({
+    const form = useForm<BillboardFormValues>({
         resolver: zodResolver(formSchema),
-        defaultValues: initialData
+        defaultValues: initialData || {
+            label:'',
+            imageUrl: ''
+        }
     });
 
-    const onSubmit = async (data: SettingsFormValues) => {
+    const onSubmit = async (data: BillboardFormValues) => {
         //console.log(data);
         try {
             setLoading(true);
@@ -89,8 +97,8 @@ const SettingsForm: React.FC<SettingsFormProps> = ({
                 loading={loading}/>
             <div className="flex items-center justify-between">
                 <Heading
-                    title="Settings"
-                    description="Manage your store preferences here."/>
+                    title={title}
+                    description={description}/>
                 <Button
                     disabled={loading}
                     variant="destructive"
@@ -109,14 +117,14 @@ const SettingsForm: React.FC<SettingsFormProps> = ({
                     <div className="grid grid-cols-3 gap-8">
                         <FormField
                             control={form.control}
-                            name="name"
+                            name="label"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>Label</FormLabel>
                                     <FormControl>
                                         <Input 
                                             disabled={loading}
-                                            placeholder="Store name"
+                                            placeholder="Billboard label"
                                             {...field}/>
                                     </FormControl>
                                     <FormMessage/>
@@ -127,17 +135,12 @@ const SettingsForm: React.FC<SettingsFormProps> = ({
                         disabled={loading} 
                         className="ml-auto"
                         type="submit">
-                        Save Changes
+                        {action}
                     </Button>
                 </form>
             </Form>
             <Separator/>
-            <ApiAlert
-                title="NEXT_PUBLIC_API_URL"
-                description={`${origin}/api/${params.storeId}`}
-                variant="public"/>
+           
         </>
     );
 };
-
-export default SettingsForm;

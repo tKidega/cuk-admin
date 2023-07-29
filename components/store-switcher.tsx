@@ -59,7 +59,7 @@ function StoreSwitcher({
                     role="combobox"
                     aria-expanded={open}
                     aria-label="Select a store"
-                    className={cn("w-[285px] justify-between", className)}>
+                    className={cn("w-[250px] justify-between", className)}>
                     <StoreIcon className="mr-2 h-4 w-4" />
                     <h4 className="">{currentStore?.label}</h4>
                     <ChevronsUpDown
