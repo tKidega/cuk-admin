@@ -16,8 +16,11 @@ export default function AuthLayout({
 }) {
     return(
         <div className="flex items-center justify-center h-full">
-            <h1 className="">Admin - layout</h1>
-            {children}
+            <div className="flex-1 space-y-4 p-6 pt-5">
+                <h1 className="text text-center text-4xl text-slate-600">
+                    Admin - layout</h1>
+                {children}
+            </div>  
         </div>
     )
 }

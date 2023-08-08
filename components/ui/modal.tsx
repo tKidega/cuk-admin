@@ -17,7 +17,7 @@ interface ModalProps {
 
 }
 
-export const Modal: React.FC<ModalProps> =({
+export const Modal: React.FC<ModalProps> = ({
     title, 
     description, 
     isOpen,
@@ -31,11 +31,15 @@ export const Modal: React.FC<ModalProps> =({
     };
 
     return (
-        <Dialog open={isOpen} onOpenChange={onChange}>
+        <Dialog 
+            open={isOpen} 
+            onOpenChange={onChange}>
             <DialogContent>
                 <DialogHeader>
                    <DialogTitle>{title}</DialogTitle> 
-                   <DialogDescription>{description}</DialogDescription>
+                   <DialogDescription>
+                        {description}
+                    </DialogDescription>
                 </DialogHeader>
                 <div>{children}</div>
             </DialogContent>

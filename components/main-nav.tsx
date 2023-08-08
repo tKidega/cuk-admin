@@ -19,19 +19,24 @@ export function MainNav({
         },
         {
             href: `/${params.storeId}/billboards`,
-            label: 'Billboards',
-            active: pathname === `/${params.storeId}/billboard`,
+            label: "Billboard's",
+            active: pathname === `/${params.storeId}/billboards`,
         },
         {
             href: `/${params.storeId}/settings`,
             label: 'Settings',
             active: pathname === `/${params.storeId}/settings`,
         },
+        {
+            href: `/${params.storeId}/about`,
+            label: 'About Us',
+            active: pathname === `/${params.storeId}/about`,
+        },
     ];
 
     return (
         <nav
-            className={cn("flex items-center space-x-4 lg:space--x6", className)}>
+            className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
             {routes.map((route) => (
                 <Link
                     key={route.href}
@@ -40,10 +45,9 @@ export function MainNav({
                         "text-sm font-medium transition-colors hover:text-primary",
                         route.active ? "text-black dark:text-white" : "text-muted-foreground"
                     )}>
-                     
                     {route.label}
                 </Link>
             ))}
-        </nav>
+        </nav> 
     )
 };

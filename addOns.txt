@@ -19,6 +19,11 @@ npx shadcn-ui@latest add command
 npx shadcn-ui@latest add separator
 npx shadcn-ui@latest add alert
 npx shadcn-ui@latest add badge
+npm install next-cloudinary 
+npx shadcn-ui@latest add table
+npm install @tanstack/react-table
+npm i date-fns
+npx shadcn-ui@latest add dropdown-menu
 
 ----How to reset prisma database----
 npx prisma migrate reset

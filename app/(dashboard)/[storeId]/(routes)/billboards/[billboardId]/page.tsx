@@ -1,3 +1,4 @@
+
 import React from 'react';
 import prismadb from '@/lib/prismadb';
 import { BillboardForm } from "./components/billboard-form";
@@ -24,4 +25,4 @@ const BillboardPage = async ({
     );
 }
 
-export default BillboardForm;
+export default BillboardPage;

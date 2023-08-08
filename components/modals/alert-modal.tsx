@@ -1,6 +1,8 @@
-import React , { useEffect, useState } from 'react';
+"use client";
+
+import { useEffect, useState } from 'react';
 import { Modal } from '@/components/ui/modal';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 interface AlertModalProps{
     isOpen: boolean;
@@ -10,7 +12,7 @@ interface AlertModalProps{
 
 }
 
-const AlertModal: React.FC<AlertModalProps> = ({
+export const AlertModal: React.FC<AlertModalProps> = ({
     isOpen,
     onClose,
     onConfirm,
@@ -33,7 +35,7 @@ const AlertModal: React.FC<AlertModalProps> = ({
             description="Are you sure? This action cannot be undone"
             isOpen={isOpen}
             onClose={onClose}>
-            <div className="pt-6 space-x-2 flex items-centyer justify-end w-full">
+            <div className="pt-6 space-x-2 flex items-center justify-end w-full">
                 <Button
                     disabled={loading}
                     variant="outline"
@@ -51,5 +53,3 @@ const AlertModal: React.FC<AlertModalProps> = ({
     )
 
 }
-
-export default AlertModal

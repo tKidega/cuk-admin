@@ -1,10 +1,10 @@
-import { Inter } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
-import { ModalProvider } from '@/providers/modal-provider'
+import { Inter } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css'
-import type { Metadata } from 'next'
-import prismadb from '@/lib/prismadb'
-import { ToasterProvider } from '@/providers/toast-provider'
+import type { Metadata } from 'next'; 
+
+import { ModalProvider } from '@/providers/modal-provider';
+import { ToasterProvider } from '@/providers/toast-provider';
 
 const inter = Inter({ subsets: ['latin'] })
 
